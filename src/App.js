@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { ExportCSV } from './ExportCSV';
 
-function App() {
+const App = () => {
+  const fileName = 'TechnicalAdda'
+  const viewers = [
+    { id: 1, name: 'sakumar' },
+    { id: 2, name: 'kumar' }
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ExportCSV csvData={viewers} fileName={fileName} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
